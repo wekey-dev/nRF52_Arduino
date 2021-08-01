@@ -1,0 +1,529 @@
+# Copyright (c) 2014-2015 Arduino LLC.  All right reserved.
+# Copyright (c) 2016 Sandeep Mistry All right reserved.
+# Copyright (c) 2017 Adafruit Industries.  All right reserved.
+#
+# This library is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Lesser General Public
+# License as published by the Free Software Foundation; either
+# version 2.1 of the License, or (at your option) any later version.
+#
+# This library is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the GNU Lesser General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public
+# License along with this library; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
+menu.softdevice=Bootloader
+menu.debug=Debug
+
+# -------------------------------------------------------
+#
+# UBMK Board
+#
+# -------------------------------------------------------
+
+# ---------------------------------------------
+# UBMK_HOST_V3_0
+# ---------------------------------------------
+ubmk_host_v3_0.name=UBMK_HOST_V3_0
+
+# VID/PID for bootloader with/without UF2, Arduino + Circuitpython App
+ubmk_host_v3_0.vid.0=0x5559
+ubmk_host_v3_0.pid.0=0x0018
+ubmk_host_v3_0.vid.1=0x5559
+ubmk_host_v3_0.pid.1=0x0018
+ubmk_host_v3_0.vid.2=0x5559
+ubmk_host_v3_0.pid.2=0x0019
+ubmk_host_v3_0.vid.3=0x5559
+ubmk_host_v3_0.pid.3=0x0019
+
+# Upload
+ubmk_host_v3_0.bootloader.tool=bootburn
+ubmk_host_v3_0.upload.tool=nrfutil
+ubmk_host_v3_0.upload.protocol=nrfutil
+ubmk_host_v3_0.upload.use_1200bps_touch=true
+ubmk_host_v3_0.upload.wait_for_upload_port=true
+ubmk_host_v3_0.upload.maximum_size=815104
+ubmk_host_v3_0.upload.maximum_data_size=237568
+
+# Build
+ubmk_host_v3_0.build.mcu=cortex-m4
+ubmk_host_v3_0.build.f_cpu=64000000
+ubmk_host_v3_0.build.board=UBMK_HOST_V3_0
+ubmk_host_v3_0.build.core=nRF5
+ubmk_host_v3_0.build.variant=ubmk_host_v3_0
+ubmk_host_v3_0.build.usb_manufacturer="@wekey.dev"
+ubmk_host_v3_0.build.usb_product="UBMK Host 3.0"
+ubmk_host_v3_0.build.extra_flags=-DNRF52840_XXAA -DWEKEY -DWEKEY_NRF52 -DWEKEY_HOST -DUBMK_HOST_V3_0 {build.flags.usb}
+ubmk_host_v3_0.build.ldscript=nrf52840_s140_v6.ld
+ubmk_host_v3_0.build.vid=0x5559
+ubmk_host_v3_0.build.pid=0x0018
+
+# SofDevice Menu
+ubmk_host_v3_0.menu.softdevice.s140v6=0.4.0 SoftDevice s140 6.1.1
+ubmk_host_v3_0.menu.softdevice.s140v6.build.sd_name=s140
+ubmk_host_v3_0.menu.softdevice.s140v6.build.sd_version=6.1.1
+ubmk_host_v3_0.menu.softdevice.s140v6.build.sd_fwid=0x00B6
+
+# Debug Menu
+ubmk_host_v3_0.menu.debug.l0=Level 0 (Release)
+ubmk_host_v3_0.menu.debug.l0.build.debug_flags=-DCFG_DEBUG=0
+ubmk_host_v3_0.menu.debug.l1=Level 1 (Error Message)
+ubmk_host_v3_0.menu.debug.l1.build.debug_flags=-DCFG_DEBUG=1
+ubmk_host_v3_0.menu.debug.l2=Level 2 (Full Debug)
+ubmk_host_v3_0.menu.debug.l2.build.debug_flags=-DCFG_DEBUG=2
+ubmk_host_v3_0.menu.debug.l3=Level 3 (Segger SystemView)
+ubmk_host_v3_0.menu.debug.l3.build.debug_flags=-DCFG_DEBUG=3
+ubmk_host_v3_0.menu.debug.l3.build.sysview_flags=-DCFG_SYSVIEW=1
+
+
+# -------------------------------------------------------
+#
+# WEKEY Board
+#
+# -------------------------------------------------------
+
+
+# ---------------------------------------------
+# WE65_V2_0
+# ---------------------------------------------
+we65_v2_0.name=WE65_V2_0
+
+# VID/PID for bootloader with/without UF2, Arduino + Circuitpython App
+we65_v2_0.vid.0=0x5559
+we65_v2_0.pid.0=0x8024
+we65_v2_0.vid.1=0x5559
+we65_v2_0.pid.1=0x0024
+we65_v2_0.vid.2=0x5559
+we65_v2_0.pid.2=0x0025
+we65_v2_0.vid.3=0x5559
+we65_v2_0.pid.3=0x8025
+
+# Upload
+we65_v2_0.bootloader.tool=bootburn
+we65_v2_0.upload.tool=nrfutil
+we65_v2_0.upload.protocol=nrfutil
+we65_v2_0.upload.use_1200bps_touch=true
+we65_v2_0.upload.wait_for_upload_port=true
+we65_v2_0.upload.maximum_size=815104
+we65_v2_0.upload.maximum_data_size=237568
+
+# Build
+we65_v2_0.build.mcu=cortex-m4
+we65_v2_0.build.f_cpu=64000000
+we65_v2_0.build.board=WE65_V2_0
+we65_v2_0.build.core=nRF5
+we65_v2_0.build.variant=we65_v2_0
+we65_v2_0.build.usb_manufacturer="@wekey.dev"
+we65_v2_0.build.usb_product="WE65 Keyboard"
+we65_v2_0.build.extra_flags=-DNRF52840_XXAA -DWEKEY -DWEKEY_NRF52 -DWE65_V2_0 {build.flags.usb}
+we65_v2_0.build.ldscript=nrf52840_s140_v6.ld
+we65_v2_0.build.vid=0x5559
+we65_v2_0.build.pid=0x8024
+
+# SofDevice Menu
+we65_v2_0.menu.softdevice.s140v6=0.4.0 SoftDevice s140 6.1.1
+we65_v2_0.menu.softdevice.s140v6.build.sd_name=s140
+we65_v2_0.menu.softdevice.s140v6.build.sd_version=6.1.1
+we65_v2_0.menu.softdevice.s140v6.build.sd_fwid=0x00B6
+
+# Debug Menu
+we65_v2_0.menu.debug.l0=Level 0 (Release)
+we65_v2_0.menu.debug.l0.build.debug_flags=-DCFG_DEBUG=0
+we65_v2_0.menu.debug.l1=Level 1 (Error Message)
+we65_v2_0.menu.debug.l1.build.debug_flags=-DCFG_DEBUG=1
+we65_v2_0.menu.debug.l2=Level 2 (Full Debug)
+we65_v2_0.menu.debug.l2.build.debug_flags=-DCFG_DEBUG=2
+we65_v2_0.menu.debug.l3=Level 3 (Segger SystemView)
+we65_v2_0.menu.debug.l3.build.debug_flags=-DCFG_DEBUG=3
+we65_v2_0.menu.debug.l3.build.sysview_flags=-DCFG_SYSVIEW=1
+
+
+# ---------------------------------------------
+# WE65_V2_3
+# ---------------------------------------------
+we65_v2_3.name=WE65_V2_3
+
+# VID/PID for bootloader with/without UF2, Arduino + Circuitpython App
+we65_v2_3.vid.0=0x5559
+we65_v2_3.pid.0=0x8034
+we65_v2_3.vid.1=0x5559
+we65_v2_3.pid.1=0x0034
+we65_v2_3.vid.2=0x5559
+we65_v2_3.pid.2=0x0035
+we65_v2_3.vid.3=0x5559
+we65_v2_3.pid.3=0x8035
+
+# Upload
+we65_v2_3.bootloader.tool=bootburn
+we65_v2_3.upload.tool=nrfutil
+we65_v2_3.upload.protocol=nrfutil
+we65_v2_3.upload.use_1200bps_touch=true
+we65_v2_3.upload.wait_for_upload_port=true
+we65_v2_3.upload.maximum_size=815104
+we65_v2_3.upload.maximum_data_size=237568
+
+# Build
+we65_v2_3.build.mcu=cortex-m4
+we65_v2_3.build.f_cpu=64000000
+we65_v2_3.build.board=WE65_V2_3
+we65_v2_3.build.core=nRF5
+we65_v2_3.build.variant=we65_v2_3
+we65_v2_3.build.usb_manufacturer="@wekey.dev"
+we65_v2_3.build.usb_product="WE65 Keyboard"
+we65_v2_3.build.extra_flags=-DNRF52840_XXAA -DWEKEY -DWEKEY_NRF52 -DWE65_V2_3 {build.flags.usb}
+we65_v2_3.build.ldscript=nrf52840_s140_v6.ld
+we65_v2_3.build.vid=0x5559
+we65_v2_3.build.pid=0x8034
+
+# SofDevice Menu
+we65_v2_3.menu.softdevice.s140v6=0.4.0 SoftDevice s140 6.1.1
+we65_v2_3.menu.softdevice.s140v6.build.sd_name=s140
+we65_v2_3.menu.softdevice.s140v6.build.sd_version=6.1.1
+we65_v2_3.menu.softdevice.s140v6.build.sd_fwid=0x00B6
+
+# Debug Menu
+we65_v2_3.menu.debug.l0=Level 0 (Release)
+we65_v2_3.menu.debug.l0.build.debug_flags=-DCFG_DEBUG=0
+we65_v2_3.menu.debug.l1=Level 1 (Error Message)
+we65_v2_3.menu.debug.l1.build.debug_flags=-DCFG_DEBUG=1
+we65_v2_3.menu.debug.l2=Level 2 (Full Debug)
+we65_v2_3.menu.debug.l2.build.debug_flags=-DCFG_DEBUG=2
+we65_v2_3.menu.debug.l3=Level 3 (Segger SystemView)
+we65_v2_3.menu.debug.l3.build.debug_flags=-DCFG_DEBUG=3
+we65_v2_3.menu.debug.l3.build.sysview_flags=-DCFG_SYSVIEW=1
+
+
+# ---------------------------------------------
+# WE65I_V2_2
+# ---------------------------------------------
+we65i_v2_2.name=WE65I_V2_2
+
+# VID/PID for bootloader with/without UF2, Arduino + Circuitpython App
+we65i_v2_2.vid.0=0x5559
+we65i_v2_2.pid.0=0x8030
+we65i_v2_2.vid.1=0x5559
+we65i_v2_2.pid.1=0x0030
+we65i_v2_2.vid.2=0x5559
+we65i_v2_2.pid.2=0x0031
+we65i_v2_2.vid.3=0x5559
+we65i_v2_2.pid.3=0x8031
+
+# Upload
+we65i_v2_2.bootloader.tool=bootburn
+we65i_v2_2.upload.tool=nrfutil
+we65i_v2_2.upload.protocol=nrfutil
+we65i_v2_2.upload.use_1200bps_touch=true
+we65i_v2_2.upload.wait_for_upload_port=true
+we65i_v2_2.upload.maximum_size=815104
+we65i_v2_2.upload.maximum_data_size=237568
+
+# Build
+we65i_v2_2.build.mcu=cortex-m4
+we65i_v2_2.build.f_cpu=64000000
+we65i_v2_2.build.board=WE65I_V2_2
+we65i_v2_2.build.core=nRF5
+we65i_v2_2.build.variant=we65i_v2_2
+we65i_v2_2.build.usb_manufacturer="@wekey.dev"
+we65i_v2_2.build.usb_product="WE65I Keyboard"
+we65i_v2_2.build.extra_flags=-DNRF52840_XXAA -DWEKEY -DWEKEY_NRF52 -DWE65I_V2_2 {build.flags.usb}
+we65i_v2_2.build.ldscript=nrf52840_s140_v6.ld
+we65i_v2_2.build.vid=0x5559
+we65i_v2_2.build.pid=0x8030
+
+# SofDevice Menu
+we65i_v2_2.menu.softdevice.s140v6=0.4.0 SoftDevice s140 6.1.1
+we65i_v2_2.menu.softdevice.s140v6.build.sd_name=s140
+we65i_v2_2.menu.softdevice.s140v6.build.sd_version=6.1.1
+we65i_v2_2.menu.softdevice.s140v6.build.sd_fwid=0x00B6
+
+# Debug Menu
+we65i_v2_2.menu.debug.l0=Level 0 (Release)
+we65i_v2_2.menu.debug.l0.build.debug_flags=-DCFG_DEBUG=0
+we65i_v2_2.menu.debug.l1=Level 1 (Error Message)
+we65i_v2_2.menu.debug.l1.build.debug_flags=-DCFG_DEBUG=1
+we65i_v2_2.menu.debug.l2=Level 2 (Full Debug)
+we65i_v2_2.menu.debug.l2.build.debug_flags=-DCFG_DEBUG=2
+we65i_v2_2.menu.debug.l3=Level 3 (Segger SystemView)
+we65i_v2_2.menu.debug.l3.build.debug_flags=-DCFG_DEBUG=3
+we65i_v2_2.menu.debug.l3.build.sysview_flags=-DCFG_SYSVIEW=1
+
+
+# ---------------------------------------------
+# WE65I_V3_0
+# ---------------------------------------------
+we65i_v3_0.name=WE65I_V3_0
+
+# VID/PID for bootloader with/without UF2, Arduino + Circuitpython App
+we65i_v3_0.vid.0=0x5559
+we65i_v3_0.pid.0=0x8032
+we65i_v3_0.vid.1=0x5559
+we65i_v3_0.pid.1=0x0032
+we65i_v3_0.vid.2=0x5559
+we65i_v3_0.pid.2=0x0033
+we65i_v3_0.vid.3=0x5559
+we65i_v3_0.pid.3=0x8033
+
+# Upload
+we65i_v3_0.bootloader.tool=bootburn
+we65i_v3_0.upload.tool=nrfutil
+we65i_v3_0.upload.protocol=nrfutil
+we65i_v3_0.upload.use_1200bps_touch=true
+we65i_v3_0.upload.wait_for_upload_port=true
+we65i_v3_0.upload.maximum_size=815104
+we65i_v3_0.upload.maximum_data_size=237568
+
+# Build
+we65i_v3_0.build.mcu=cortex-m4
+we65i_v3_0.build.f_cpu=64000000
+we65i_v3_0.build.board=WE65I_V3_0
+we65i_v3_0.build.core=nRF5
+we65i_v3_0.build.variant=we65i_v3_0
+we65i_v3_0.build.usb_manufacturer="@wekey.dev"
+we65i_v3_0.build.usb_product="WE65I Keyboard"
+we65i_v3_0.build.extra_flags=-DNRF52840_XXAA -DWEKEY -DWEKEY_NRF52 -DWE65I_V3_0 {build.flags.usb}
+we65i_v3_0.build.ldscript=nrf52840_s140_v6.ld
+we65i_v3_0.build.vid=0x5559
+we65i_v3_0.build.pid=0x8032
+
+# SofDevice Menu
+we65i_v3_0.menu.softdevice.s140v6=0.4.0 SoftDevice s140 6.1.1
+we65i_v3_0.menu.softdevice.s140v6.build.sd_name=s140
+we65i_v3_0.menu.softdevice.s140v6.build.sd_version=6.1.1
+we65i_v3_0.menu.softdevice.s140v6.build.sd_fwid=0x00B6
+
+# Debug Menu
+we65i_v3_0.menu.debug.l0=Level 0 (Release)
+we65i_v3_0.menu.debug.l0.build.debug_flags=-DCFG_DEBUG=0
+we65i_v3_0.menu.debug.l1=Level 1 (Error Message)
+we65i_v3_0.menu.debug.l1.build.debug_flags=-DCFG_DEBUG=1
+we65i_v3_0.menu.debug.l2=Level 2 (Full Debug)
+we65i_v3_0.menu.debug.l2.build.debug_flags=-DCFG_DEBUG=2
+we65i_v3_0.menu.debug.l3=Level 3 (Segger SystemView)
+we65i_v3_0.menu.debug.l3.build.debug_flags=-DCFG_DEBUG=3
+we65i_v3_0.menu.debug.l3.build.sysview_flags=-DCFG_SYSVIEW=1
+
+
+# ---------------------------------------------
+# WE1X_V1_0
+# ---------------------------------------------
+we1x_v1_0.name=WE1X_V1_0
+
+# VID/PID for bootloader with/without UF2, Arduino + Circuitpython App
+we1x_v1_0.vid.0=0x5559
+we1x_v1_0.pid.0=0x8038
+we1x_v1_0.vid.1=0x5559
+we1x_v1_0.pid.1=0x0038
+we1x_v1_0.vid.2=0x5559
+we1x_v1_0.pid.2=0x0039
+we1x_v1_0.vid.3=0x5559
+we1x_v1_0.pid.3=0x8039
+
+# Upload
+we1x_v1_0.bootloader.tool=bootburn
+we1x_v1_0.upload.tool=nrfutil
+we1x_v1_0.upload.protocol=nrfutil
+we1x_v1_0.upload.use_1200bps_touch=true
+we1x_v1_0.upload.wait_for_upload_port=true
+we1x_v1_0.upload.maximum_size=815104
+we1x_v1_0.upload.maximum_data_size=237568
+
+# Build
+we1x_v1_0.build.mcu=cortex-m4
+we1x_v1_0.build.f_cpu=64000000
+we1x_v1_0.build.board=WE1X_V1_0
+we1x_v1_0.build.core=nRF5
+we1x_v1_0.build.variant=we1x_v1_0
+we1x_v1_0.build.usb_manufacturer="@wekey.dev"
+we1x_v1_0.build.usb_product="WE1X Adapter"
+we1x_v1_0.build.extra_flags=-DNRF52840_XXAA -DWEKEY -DWEKEY_NRF52 -DWEKEY_HOST -DWE1X_V1_0 {build.flags.usb}
+we1x_v1_0.build.ldscript=nrf52840_s140_v6.ld
+we1x_v1_0.build.vid=0x5559
+we1x_v1_0.build.pid=0x8038
+
+# SofDevice Menu
+we1x_v1_0.menu.softdevice.s140v6=0.4.0 SoftDevice s140 6.1.1
+we1x_v1_0.menu.softdevice.s140v6.build.sd_name=s140
+we1x_v1_0.menu.softdevice.s140v6.build.sd_version=6.1.1
+we1x_v1_0.menu.softdevice.s140v6.build.sd_fwid=0x00B6
+
+# Debug Menu
+we1x_v1_0.menu.debug.l0=Level 0 (Release)
+we1x_v1_0.menu.debug.l0.build.debug_flags=-DCFG_DEBUG=0
+we1x_v1_0.menu.debug.l1=Level 1 (Error Message)
+we1x_v1_0.menu.debug.l1.build.debug_flags=-DCFG_DEBUG=1
+we1x_v1_0.menu.debug.l2=Level 2 (Full Debug)
+we1x_v1_0.menu.debug.l2.build.debug_flags=-DCFG_DEBUG=2
+we1x_v1_0.menu.debug.l3=Level 3 (Segger SystemView)
+we1x_v1_0.menu.debug.l3.build.debug_flags=-DCFG_DEBUG=3
+we1x_v1_0.menu.debug.l3.build.sysview_flags=-DCFG_SYSVIEW=1
+
+
+# ---------------------------------------------
+# WE5K_V1_0
+# ---------------------------------------------
+we5k_v1_0.name=WE5K_V1_0
+
+# VID/PID for bootloader with/without UF2, Arduino + Circuitpython App
+we5k_v1_0.vid.0=0x5559
+we5k_v1_0.pid.0=0x8036
+we5k_v1_0.vid.1=0x5559
+we5k_v1_0.pid.1=0x0036
+we5k_v1_0.vid.2=0x5559
+we5k_v1_0.pid.2=0x0037
+we5k_v1_0.vid.3=0x5559
+we5k_v1_0.pid.3=0x8037
+
+# Upload
+we5k_v1_0.bootloader.tool=bootburn
+we5k_v1_0.upload.tool=nrfutil
+we5k_v1_0.upload.protocol=nrfutil
+we5k_v1_0.upload.use_1200bps_touch=true
+we5k_v1_0.upload.wait_for_upload_port=true
+we5k_v1_0.upload.maximum_size=815104
+we5k_v1_0.upload.maximum_data_size=237568
+
+# Build
+we5k_v1_0.build.mcu=cortex-m4
+we5k_v1_0.build.f_cpu=64000000
+we5k_v1_0.build.board=WE5K_V1_0
+we5k_v1_0.build.core=nRF5
+we5k_v1_0.build.variant=we5k_v1_0
+we5k_v1_0.build.usb_manufacturer="@wekey.dev"
+we5k_v1_0.build.usb_product="WE1X Adapter"
+we5k_v1_0.build.extra_flags=-DNRF52840_XXAA -DWEKEY -DWEKEY_NRF52 -DWE5K_V1_0 {build.flags.usb}
+we5k_v1_0.build.ldscript=nrf52840_s140_v6.ld
+we5k_v1_0.build.vid=0x5559
+we5k_v1_0.build.pid=0x8036
+
+# SofDevice Menu
+we5k_v1_0.menu.softdevice.s140v6=0.4.0 SoftDevice s140 6.1.1
+we5k_v1_0.menu.softdevice.s140v6.build.sd_name=s140
+we5k_v1_0.menu.softdevice.s140v6.build.sd_version=6.1.1
+we5k_v1_0.menu.softdevice.s140v6.build.sd_fwid=0x00B6
+
+# Debug Menu
+we5k_v1_0.menu.debug.l0=Level 0 (Release)
+we5k_v1_0.menu.debug.l0.build.debug_flags=-DCFG_DEBUG=0
+we5k_v1_0.menu.debug.l1=Level 1 (Error Message)
+we5k_v1_0.menu.debug.l1.build.debug_flags=-DCFG_DEBUG=1
+we5k_v1_0.menu.debug.l2=Level 2 (Full Debug)
+we5k_v1_0.menu.debug.l2.build.debug_flags=-DCFG_DEBUG=2
+we5k_v1_0.menu.debug.l3=Level 3 (Segger SystemView)
+we5k_v1_0.menu.debug.l3.build.debug_flags=-DCFG_DEBUG=3
+we5k_v1_0.menu.debug.l3.build.sysview_flags=-DCFG_SYSVIEW=1
+
+
+
+# ---------------------------------------------
+# WE1X_V1_1
+# ---------------------------------------------
+we1x_v1_1.name=WE1X_V1_1
+
+# VID/PID for bootloader with/without UF2, Arduino + Circuitpython App
+we1x_v1_1.vid.0=0x5559
+we1x_v1_1.pid.0=0x8042
+we1x_v1_1.vid.1=0x5559
+we1x_v1_1.pid.1=0x0042
+we1x_v1_1.vid.2=0x5559
+we1x_v1_1.pid.2=0x0043
+we1x_v1_1.vid.3=0x5559
+we1x_v1_1.pid.3=0x8043
+
+# Upload
+we1x_v1_1.bootloader.tool=bootburn
+we1x_v1_1.upload.tool=nrfutil
+we1x_v1_1.upload.protocol=nrfutil
+we1x_v1_1.upload.use_1200bps_touch=true
+we1x_v1_1.upload.wait_for_upload_port=true
+we1x_v1_1.upload.maximum_size=815104
+we1x_v1_1.upload.maximum_data_size=237568
+
+# Build
+we1x_v1_1.build.mcu=cortex-m4
+we1x_v1_1.build.f_cpu=64000000
+we1x_v1_1.build.board=WE1X_V1_1
+we1x_v1_1.build.core=nRF5
+we1x_v1_1.build.variant=we1x_v1_1
+we1x_v1_1.build.usb_manufacturer="@wekey.dev"
+we1x_v1_1.build.usb_product="WE1X Adapter"
+we1x_v1_1.build.extra_flags=-DNRF52840_XXAA -DWEKEY -DWEKEY_NRF52 -DWEKEY_HOST -DWE1X_V1_1 {build.flags.usb}
+we1x_v1_1.build.ldscript=nrf52840_s140_v6.ld
+we1x_v1_1.build.vid=0x5559
+we1x_v1_1.build.pid=0x8042
+
+# SofDevice Menu
+we1x_v1_1.menu.softdevice.s140v6=0.4.0 SoftDevice s140 6.1.1
+we1x_v1_1.menu.softdevice.s140v6.build.sd_name=s140
+we1x_v1_1.menu.softdevice.s140v6.build.sd_version=6.1.1
+we1x_v1_1.menu.softdevice.s140v6.build.sd_fwid=0x00B6
+
+# Debug Menu
+we1x_v1_1.menu.debug.l0=Level 0 (Release)
+we1x_v1_1.menu.debug.l0.build.debug_flags=-DCFG_DEBUG=0
+we1x_v1_1.menu.debug.l1=Level 1 (Error Message)
+we1x_v1_1.menu.debug.l1.build.debug_flags=-DCFG_DEBUG=1
+we1x_v1_1.menu.debug.l2=Level 2 (Full Debug)
+we1x_v1_1.menu.debug.l2.build.debug_flags=-DCFG_DEBUG=2
+we1x_v1_1.menu.debug.l3=Level 3 (Segger SystemView)
+we1x_v1_1.menu.debug.l3.build.debug_flags=-DCFG_DEBUG=3
+we1x_v1_1.menu.debug.l3.build.sysview_flags=-DCFG_SYSVIEW=1
+
+
+# ---------------------------------------------
+# WE6K_V1_2
+# ---------------------------------------------
+we6k_v1_2.name=WE6K_V1_2
+
+# VID/PID for bootloader with/without UF2, Arduino + Circuitpython App
+we6k_v1_2.vid.0=0x5559
+we6k_v1_2.pid.0=0x8044
+we6k_v1_2.vid.1=0x5559
+we6k_v1_2.pid.1=0x0044
+we6k_v1_2.vid.2=0x5559
+we6k_v1_2.pid.2=0x0045
+we6k_v1_2.vid.3=0x5559
+we6k_v1_2.pid.3=0x8045
+
+# Upload
+we6k_v1_2.bootloader.tool=bootburn
+we6k_v1_2.upload.tool=nrfutil
+we6k_v1_2.upload.protocol=nrfutil
+we6k_v1_2.upload.use_1200bps_touch=true
+we6k_v1_2.upload.wait_for_upload_port=true
+we6k_v1_2.upload.maximum_size=815104
+we6k_v1_2.upload.maximum_data_size=237568
+
+# Build
+we6k_v1_2.build.mcu=cortex-m4
+we6k_v1_2.build.f_cpu=64000000
+we6k_v1_2.build.board=WE6K_V1_2
+we6k_v1_2.build.core=nRF5
+we6k_v1_2.build.variant=we6k_v1_2
+we6k_v1_2.build.usb_manufacturer="@wekey.dev"
+we6k_v1_2.build.usb_product="WE6K Keyboard"
+we6k_v1_2.build.extra_flags=-DNRF52840_XXAA -DWEKEY -DWEKEY_NRF52 -DWEKEY_HOST -DWE6K_V1_2 {build.flags.usb}
+we6k_v1_2.build.ldscript=nrf52840_s140_v6.ld
+we6k_v1_2.build.vid=0x5559
+we6k_v1_2.build.pid=0x8044
+
+# SofDevice Menu
+we6k_v1_2.menu.softdevice.s140v6=0.4.0 SoftDevice s140 6.1.1
+we6k_v1_2.menu.softdevice.s140v6.build.sd_name=s140
+we6k_v1_2.menu.softdevice.s140v6.build.sd_version=6.1.1
+we6k_v1_2.menu.softdevice.s140v6.build.sd_fwid=0x00B6
+
+# Debug Menu
+we6k_v1_2.menu.debug.l0=Level 0 (Release)
+we6k_v1_2.menu.debug.l0.build.debug_flags=-DCFG_DEBUG=0
+we6k_v1_2.menu.debug.l1=Level 1 (Error Message)
+we6k_v1_2.menu.debug.l1.build.debug_flags=-DCFG_DEBUG=1
+we6k_v1_2.menu.debug.l2=Level 2 (Full Debug)
+we6k_v1_2.menu.debug.l2.build.debug_flags=-DCFG_DEBUG=2
+we6k_v1_2.menu.debug.l3=Level 3 (Segger SystemView)
+we6k_v1_2.menu.debug.l3.build.debug_flags=-DCFG_DEBUG=3
+we6k_v1_2.menu.debug.l3.build.sysview_flags=-DCFG_SYSVIEW=1
+
